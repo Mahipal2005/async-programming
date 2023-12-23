@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slider images</title>
+    <style>
+        *{
+            background-color: rgb(6, 2, 2);           
+        }
+        img{
+            margin:0 0  0 22% ;
+            height: 600px;
+            width:900px;
+        }
+        #btn{
+            margin-top: 10px;
+            margin-left: 22%;
+            margin-right: 19%;
+            display: flex;
+            justify-content: space-between;
+        }
+        #btn button{
+            color: rgb(0, 55, 255);
+            background-color: white;
+            height: 50px;
+            width: 100px;
+            border-radius: 10px;
+            text-align: center;   
+        }
+    </style>
+</head>
+<body>
+    <div id="imag">
+    </div>
+    <div id="btn">
+        <button onclick="previous()">Perevious</button>
+        <button id="stop_start" onclick="stop_start()">Start</button>
+        <button onclick="next()">Next</button>
+    </div>
+
+</body>
+</html>
+<script src="./slider.js"></script>

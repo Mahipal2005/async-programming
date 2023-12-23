@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            background-color: rgb(3, 2, 17);
+        }
+
+        #main {
+
+            margin: 100px auto;
+            /* padding: 50px; */
+            border: 10px solid green;
+            border-radius: 20px;
+            height: 200px;
+            width: 350px;
+        }
+
+        #main div {
+            padding: 10px;
+        }
+
+        #value input {
+            margin:10px 0px 0px 10px;
+            width: 90px;
+            height: 50px;
+            color: white;
+            font-size:xx-large;
+            /* border: none; */
+        }
+        #btn{
+            margin-left: 30px;
+        }
+        #btn button {
+            width: 70px;
+            height: 40px;
+            margin: 10px 0px 0px 10px ;
+        }
+
+        #start {
+            background-color: blue;
+        }
+
+        #pause {
+            background-color: rgb(255, 0, 0);
+        }
+
+        #reset {
+            background-color: rgb(157, 157, 164);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <div id="value">
+            <input id="hour" type="number" min="0" placeholder="hh">
+            <input id="min" type="number"  min="0" placeholder="mm">
+            <input id="second" type="number" min="0" placeholder="ss">
+        </div>
+        <div id="btn">
+            <button id="start">Start</button>
+            <button id="pause">Pause</button>
+            <button id="reset">Reset</button>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="./timer-watch.js"></script>

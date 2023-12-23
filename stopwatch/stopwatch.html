@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stopwatch</title>
+    <style>
+        *{
+            background-color: black;
+        }
+        #main{
+            height: 200px;
+            width: 300px;
+            border: 10px solid green;
+            border-radius: 30px;
+            margin : 100px auto auto auto;   
+        }
+        #time{
+            color: white;
+            text-align: center;
+            font-size: xxx-large;
+            margin-top: 11px;
+            font-weight: 900;
+            font-family: 'Times New Roman', Times, serif;  
+        }
+        #btn button{
+            margin: 20px;
+            padding: 10px;
+            justify-content: center;
+        }
+        #btn #start{
+            background-color: red;
+        }
+        #btn #pause{
+            background-color: rgb(55, 0, 236);
+        }
+        #btn #reset{
+            background-color: rgba(209, 205, 208, 0.37);
+        }
+
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="time">
+        </div>
+        <div id="btn">
+            <button id="start" onclick="start()">Start</button>
+            <button id="pause" onclick="pause()">Pause</button>
+            <button id="reset" onclick="reset()">Reset</button>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    nanosec=0
+    second=0;
+    min=0
+    hour=0
+    let timer;
+    document.querySelector('#time').innerHTML=`${second}:${nanosec}`
+    function start(){
+        timer=setInterval(()=>{
+            if(second<59 && min==0 && hour==0){
+                document.querySelector('#time').innerHTML=`${second}:${nanosec}` 
+            }
+            else if(  hour==0 && ( second==59 || min>0))
+            {
+                document.querySelector('#time').innerHTML=`${min}:${second}:${nanosec}` 
+            }
+            else
+            {
+                document.querySelector('#time').innerHTML=`${hour}:${min}:${second}:${nanosec}` 
+            }
+           
+    nanosec++
+    if (nanosec==100){
+        second+=1
+        nanosec=0
+    }
+
+    if(second==60){
+        min+=1
+        second=0
+    }
+    if(min==60){
+        hour+=1
+        min=0;
+        second=0
+    }
+
+        },10)
+    }
+    function pause(){
+        clearInterval(timer)
+    }
+    function reset(){
+        nanosec=0
+        second=0
+        min=0
+        hour=0
+        document.querySelector('#time').innerHTML=`${second}:${nanosec}`
+        pause() 
+    }
+    
+
+</script>
